@@ -21,21 +21,21 @@
                         <div class="row">
                             <div class="col-md-4 mt-4">
                                 <label for="title">Título do livro:</label>
-                                <input type="text" name="title" id="title" value="{{ $book->title }}" class="form-control">
+                                <input type="text" name="title" id="title" maxlength="255" value="{{ $book->title }}" class="form-control">
                             </div>
                             <div class="col-md-4 mt-4">
                                 <label for="description">Descrição do livro:</label>
-                                <input type="text" name="description" value="{{ $book->description }}" id="description" class="form-control">
+                                <input type="text" name="description" value="{{ $book->description }}" id="description" maxlength="255" class="form-control">
                             </div>
                             <div class="col-md-4 mt-4">
                                 <label for="author">Autor do livro:</label>
-                                <input type="text" name="author" value="{{ $book->author }}" id="author" class="form-control">
+                                <input type="text" name="author" value="{{ $book->author }}" id="author" maxlength="255" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-3 col-md-2 mt-4">
                                 <label for="pages">Número de páginas:</label>
-                                <input type="number" name="pages" value="{{ $book->pages }}" id="pages" class="form-control">
+                                <input type="number" name="pages" value="{{ $book->pages }}" id="pages" maxlength="10" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-4">

@@ -76,12 +76,13 @@
                                 @foreach($books as $book)
                                     <tr>
                                         <td class="align-middle">{{$book->title}}</td>
-                                        <td class="align-middle">{{ \Str::limit($book->description, 100)}}</td>
+                                        <td class="align-middle">{{ \Str::limit($book->description, 50)}}</td>
                                         <td class="align-middle">{{$book->author}}</td>
                                         <td class="text-center align-middle">{{$book->pages}}</td>
                                         <td class="text-center align-middle">{{date('d/m/Y H:i:s', strtotime($book->created_at))}}</td>
-                                        <td class="text-right align-middle">
+                                        <td class="d-flex justify-content-end align-middle">
                                             <form action="{{ route('books.destroy', $book->id) }}" method="POST">   
+                                                <a class="btn btn-warning btn-sm" href="{{ route('books.show', $book->id) }}">Ver</a>   
                                                 <a class="btn btn-primary btn-sm" href="{{ route('books.edit', $book->id) }}">Editar</a>   
                                                 @csrf
                                                 @method('DELETE')

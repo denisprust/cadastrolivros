@@ -20,21 +20,21 @@
                         <div class="row">
                             <div class="col-md-4 mt-4">
                                 <label for="title">Título do livro:</label>
-                                <input type="text" name="title" id="title" class="form-control">
+                                <input type="text" name="title" id="title" maxlength="255"class="form-control">
                             </div>
                             <div class="col-md-4 mt-4">
                                 <label for="description">Descrição do livro:</label>
-                                <input type="text" name="description" id="description" class="form-control">
+                                <input type="text" name="description" id="description" maxlength="255" class="form-control">
                             </div>
                             <div class="col-md-4 mt-4">
                                 <label for="author">Autor do livro:</label>
-                                <input type="text" name="author" id="author" class="form-control">
+                                <input type="text" name="author" id="author" maxlength="255" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-3 col-md-2 mt-4">
                                 <label for="pages">Número de páginas:</label>
-                                <input type="number" name="pages" id="pages" class="form-control">
+                                <input type="number" name="pages" id="pages" maxlength="10" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-4">

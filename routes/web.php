@@ -23,4 +23,6 @@ Route::get('/',  [App\Http\Controllers\BookController::class, 'index'])->middlew
 
 Route::post('/livros/salvar', [App\Http\Controllers\BookController::class, 'store'])->name('books.store')->middleware('auth');
 Route::get('/livros/novo', [App\Http\Controllers\BookController::class, 'create'])->name('books.create')->middleware('auth');
-Route::get('/livros', [App\Http\Controllers\BookController::class, 'index'])->name('books.index')->middleware('auth');;
+Route::get('/livros', [App\Http\Controllers\BookController::class, 'index'])->name('books.index')->middleware('auth');
+Route::get('/livro/{book}', [App\Http\Controllers\BookController::class, 'show'])->name('books.show')->middleware('auth');
+Route::get('/livro/{book}/edit', [App\Http\Controllers\BookController::class, 'edit'])->name('books.edit')->middleware('auth');
