@@ -5,9 +5,9 @@
     <div class="row justify-content-center mb-3">
         <div class="col-12">
             <div class="card text-center">
-                {{ $theater['city'] }} -
-                {{ $theater['temp'] }}ºC - 
-                {{ $theater['description'] }}
+                {{ $weather['city'] }} -
+                {{ $weather['temp'] }}ºC - 
+                {{ $weather['description'] }}
             </div>
         </div>
     </div>

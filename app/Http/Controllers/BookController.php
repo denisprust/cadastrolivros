@@ -6,10 +6,12 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-
+use App\Providers\WeatherServiceProvider;
 
 class BookController extends Controller
 {
+    public const PAGINATION = 5;
+
     /**
      * Display a listing of the resource.
      *
@@ -35,14 +37,16 @@ class BookController extends Controller
             $books = $books->where('author', 'like', '%'.trim($request->author).'%');
         }
 
-        $theater = $this->getTheater();
+        // In local test it will always get the local IP.
+        $weatherProvider = new WeatherServiceProvider();
+        $weather = $weatherProvider->getWeather($request->ip);
 
-        $books = $books->paginate(5);
+        $books = $books->paginate(self::PAGINATION);
 
-        return view('books/index', compact('books', 'request', 'theater'));
+        return view('books/index', compact('books', 'request', 'weather'));
     }
 
-    private function getTheater() {
+    private function getWeather() {
         $response = Http::get('https://api.hgbrasil.com/weather?format=json&user_ip=192.168.1.107');
         return $response->json()['results'];
     }
